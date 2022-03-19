@@ -1,4 +1,4 @@
-import "./styles.css";
+import DogDetailCSS from "./styles.module.css";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetail } from "../../redux/actions";
@@ -6,7 +6,6 @@ import doggie from "../perro.jpg";
 import { Link, useParams } from "react-router-dom";
 
 const DogDetail = () => {
-  // console.log("PROPS :::  ", props);
   const dispatch = useDispatch();
 
   const { id } = useParams();
@@ -17,18 +16,18 @@ const DogDetail = () => {
   const myDog = useSelector((state) => state.detail);
 
   return (
-    <div className="principal">
-      <div className="app">
+    <div className={DogDetailCSS.principal}>
+      <div className={DogDetailCSS.app}>
         {myDog.length > 0 ? (
-          <div className="details">
-            <div className="big-img">
+          <div className={DogDetailCSS.details}>
+            <div className={DogDetailCSS.big_img}>
               <img
                 src={myDog[0].image ? myDog[0].image : doggie}
                 alt="Img not found"
               />
             </div>
-            <div className="box">
-              <div className="row">
+            <div className={DogDetailCSS.box}>
+              <div className={DogDetailCSS.row}>
                 <h2>Name: {myDog[0].name}</h2>
               </div>
               <p>
@@ -44,7 +43,7 @@ const DogDetail = () => {
                 {myDog[0].life_span ? myDog[0].life_span : "Campo vacio"}
               </p>
               <Link to="/home">
-                <button className="back">Back</button>
+                <button className={DogDetailCSS.back}>Back</button>
               </Link>
             </div>
           </div>

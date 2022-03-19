@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import PaginationCSS from "./styles.module.css";
 
 const Pagination = ({ allDogs, dogsPerPage, paginado }) => {
   const pageNumbers = [];
@@ -11,10 +11,10 @@ const Pagination = ({ allDogs, dogsPerPage, paginado }) => {
 
   return (
     <nav>
-      <ul className="pagination">
+      <ul className={PaginationCSS.pagination}>
         {pageNumbers &&
           pageNumbers.map((number) => (
-            <li className="number" key={number}>
+            <li className={PaginationCSS.number} key={number}>
               <a onClick={() => paginado(number)} href={`#${number}`}>
                 {number}
               </a>

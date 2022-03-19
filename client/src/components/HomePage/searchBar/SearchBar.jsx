@@ -2,6 +2,7 @@ import "./styles.css";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getDogsByQuery } from "../../../redux/actions";
+// import searchIcon from "./search-icon.png";
 
 const SearchBar = ({ setCurrentPage }) => {
   const dispatch = useDispatch();
@@ -17,18 +18,19 @@ const SearchBar = ({ setCurrentPage }) => {
     e.preventDefault();
     dispatch(getDogsByQuery(name));
     setCurrentPage(1);
-    // setName("");
   }
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Buscar perro..."
-        onChange={(e) => handleInputChange(e)}
-      />
+    <div className="search">
+      <div className="search__input">
+        <input
+          type="text"
+          placeholder="Example: Akita..."
+          onChange={(e) => handleInputChange(e)}
+        />
+      </div>
       <button type="submit" onClick={(e) => handleSubmit(e)}>
-        Buscar
+        Search
       </button>
     </div>
   );

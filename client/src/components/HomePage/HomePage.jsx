@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./styles.css";
+import HomeCSS from "./styles.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   filterByTemperament,
@@ -14,6 +14,7 @@ import Filters from "./filters/Filters";
 import Pagination from "./pagination/Pagination";
 import SearchBar from "./searchBar/SearchBar";
 import doggie from "../perro.jpg";
+import Navbar from "./navbar/Navbar";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -62,10 +63,7 @@ const HomePage = () => {
         return elemento.temperament[i].name + ", ";
       }
     }
-    return "Sin temperamento";
-    // const array = arreglo.map((el) => el.name + ", ");
-    // console.log("QUE HAY ACA ???", array);
-    // return array;
+    return "Temperament: empty";
   }
 
   useEffect(() => {
@@ -74,16 +72,17 @@ const HomePage = () => {
   }, [dispatch]);
 
   return (
-    <div className="home__page">
-      <div className="header">
-        <h1>HOLA PERREQUES</h1>
+    <div className={HomeCSS.home__page}>
+      <div className={HomeCSS.header}>
+        <Navbar />
+        <h1>Wololooo!</h1>
         <Link to="/dog">CREATE DOG</Link>
         <button
           onClick={(e) => {
             handleClick(e);
           }}
         >
-          Volver a cargar todos los perreques
+          Reload dogs
         </button>
         <SearchBar setCurrentPage={setCurrentPage} />
         <Filters
@@ -92,7 +91,7 @@ const HomePage = () => {
           handleSort={handleSort}
           allTemperaments={allTemperaments}
         />
-        <div className="pagination">
+        <div className={HomeCSS.pagination}>
           <Pagination
             allDogs={allDogs.length}
             dogsPerPage={dogsPerPage}
@@ -102,7 +101,7 @@ const HomePage = () => {
       </div>
 
       <main>
-        <div className="cards">
+        <div className={HomeCSS.cards}>
           {currentDogs.map((el) => {
             return (
               <React.Fragment key={el.id}>
@@ -124,7 +123,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-// typeof el.temperament === "string"
-//                       ? el.temperament
-//                       : arrayDeObjetos(el.temperaments)
