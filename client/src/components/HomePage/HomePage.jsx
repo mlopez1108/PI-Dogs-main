@@ -73,31 +73,29 @@ const HomePage = () => {
 
   return (
     <div className={HomeCSS.home__page}>
-      <div className={HomeCSS.header}>
-        <Navbar />
-        <h1>Wololooo!</h1>
-        <Link to="/dog">CREATE DOG</Link>
-        <button
-          onClick={(e) => {
-            handleClick(e);
-          }}
-        >
-          Reload dogs
-        </button>
-        <SearchBar setCurrentPage={setCurrentPage} />
-        <Filters
-          handleFilterByTemperament={handleFilterByTemperament}
-          handleFilterCreated={handleFilterCreated}
-          handleSort={handleSort}
-          allTemperaments={allTemperaments}
+      <Navbar />
+      <h1>Wololooo!</h1>
+      <Link to="/dog">CREATE DOG</Link>
+      <button
+        onClick={(e) => {
+          handleClick(e);
+        }}
+      >
+        Reload dogs
+      </button>
+      <SearchBar setCurrentPage={setCurrentPage} />
+      <Filters
+        handleFilterByTemperament={handleFilterByTemperament}
+        handleFilterCreated={handleFilterCreated}
+        handleSort={handleSort}
+        allTemperaments={allTemperaments}
+      />
+      <div className={HomeCSS.pagination}>
+        <Pagination
+          allDogs={allDogs.length}
+          dogsPerPage={dogsPerPage}
+          paginado={paginado}
         />
-        <div className={HomeCSS.pagination}>
-          <Pagination
-            allDogs={allDogs.length}
-            dogsPerPage={dogsPerPage}
-            paginado={paginado}
-          />
-        </div>
       </div>
 
       <main>

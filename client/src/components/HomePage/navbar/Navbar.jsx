@@ -1,45 +1,33 @@
 import NavbarCSS from "./styles.module.css";
 import React, { useState } from "react";
+import ReorderIcon from "@material-ui/icons/Reorder";
+import SearchIcon from "@material-ui/icons/Search";
 
 const Navbar = () => {
-  const [active, setActive] = useState("nav__menu");
-  const [toggleIcon, setToggleIcon] = useState("nav__togler");
-
-  const navToggle = () => {
-    active === "nav__menu"
-      ? setActive("nav__menu nav__active")
-      : setActive("nav__menu");
-
-    // TogglerIcon:
-    toggleIcon === "nav_toggler"
-      ? setToggleIcon("nav__toggler toggle")
-      : setToggleIcon("nav__toggler");
-  };
+  const [showLinks, setShowLinks] = useState(false);
 
   return (
-    <div className={NavbarCSS.navbar}>
-      <nav className={NavbarCSS.nav}>
-        <a href="#!" className={NavbarCSS.nav__brand}>
-          Dogs
-        </a>
-        <ul className={active}>
-          <li className={NavbarCSS.nav__item}>
-            <a href="#!" className={NavbarCSS.nav__link}>
-              Search bar
-            </a>
-          </li>
-          <li className={NavbarCSS.nav__item}>
-            <a href="#!" className={NavbarCSS.nav__link}>
-              Create dog
-            </a>
-          </li>
-        </ul>
-        <div onClick={navToggle} className={toggleIcon}>
-          <div className={NavbarCSS.line1}></div>
-          <div className={NavbarCSS.line2}></div>
-          <div className={NavbarCSS.line3}></div>
+    <div className={NavbarCSS.Navbar}>
+      <div className={NavbarCSS.leftSide}>
+        <div className={NavbarCSS.links} id={showLinks ? "hidden" : ""}>
+          <a href="/dog">Create</a>
+          <a href="#!">Feedback</a>
+          <a href="#!">About us</a>
+          <a href="#!">Contact</a>
         </div>
-      </nav>
+        <button
+          className={NavbarCSS.button}
+          onClick={() => setShowLinks(!showLinks)}
+        >
+          <ReorderIcon />
+        </button>
+      </div>
+      <div className={NavbarCSS.rightSide}>
+        <input type="text" placeholder="Search..." />
+        <button className={NavbarCSS.button}>
+          <SearchIcon />
+        </button>
+      </div>
     </div>
   );
 };
