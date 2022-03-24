@@ -12,8 +12,7 @@ const Navbar = () => {
         <div className={NavbarCSS.links} id={showLinks ? "hidden" : ""}>
           <a href="/dog">Create</a>
           <a href="#!">Feedback</a>
-          <a href="#!">About us</a>
-          <a href="#!">Contact</a>
+          <a href="/about">AboutMe</a>
         </div>
         <button
           className={NavbarCSS.button}
