@@ -1,8 +1,7 @@
-import "./styles.css";
+import SearchBarCSS from "./styles.module.css";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getDogsByQuery } from "../../../redux/actions";
-// import searchIcon from "./search-icon.png";
 
 const SearchBar = ({ setCurrentPage }) => {
   const dispatch = useDispatch();
@@ -21,15 +20,17 @@ const SearchBar = ({ setCurrentPage }) => {
   }
 
   return (
-    <div className="search">
-      <div className="search__input">
-        <input
-          type="text"
-          placeholder="Example: Akita..."
-          onChange={(e) => handleInputChange(e)}
-        />
-      </div>
-      <button type="submit" onClick={(e) => handleSubmit(e)}>
+    <div className={SearchBarCSS.search}>
+      <input
+        type="text"
+        placeholder="Example: Akita..."
+        onChange={(e) => handleInputChange(e)}
+      />
+      <button
+        className={SearchBarCSS.button}
+        type="submit"
+        onClick={(e) => handleSubmit(e)}
+      >
         Search
       </button>
     </div>

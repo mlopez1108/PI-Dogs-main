@@ -8,11 +8,9 @@ import {
   getTemperaments,
   orderByName,
 } from "../../redux/actions";
-import { Link } from "react-router-dom";
 import Card from "./card/Card";
 import Filters from "./filters/Filters";
 import Pagination from "./pagination/Pagination";
-import SearchBar from "./searchBar/SearchBar";
 import doggie from "../perro.jpg";
 import Navbar from "./navbar/Navbar";
 
@@ -73,9 +71,8 @@ const HomePage = () => {
 
   return (
     <div className={HomeCSS.home__page}>
-      <Navbar />
+      <Navbar setCurrentPage={setCurrentPage} />
       <h1>Wololooo!</h1>
-      <Link to="/dog">CREATE DOG</Link>
       <button
         onClick={(e) => {
           handleClick(e);
@@ -83,7 +80,6 @@ const HomePage = () => {
       >
         Reload dogs
       </button>
-      <SearchBar setCurrentPage={setCurrentPage} />
       <Filters
         handleFilterByTemperament={handleFilterByTemperament}
         handleFilterCreated={handleFilterCreated}
