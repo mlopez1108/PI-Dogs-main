@@ -92,6 +92,11 @@ function rootReducer(state = initialState, { type, payload }) {
         ...state,
         detail: payload,
       };
+    case "GET_DELETE_DETAIL":
+      return {
+        ...state,
+        detail: [],
+      };
     default:
       return state;
   }

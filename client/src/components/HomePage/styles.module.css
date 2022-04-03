@@ -13,11 +13,12 @@
   align-items: center;
   width: 150px;
   margin-left: 620px;
-  margin-top: 10px;
+  margin-top: 30px;
   cursor: pointer;
   border: 2px solid;
   color: black;
   border-radius: 3px;
+  font-weight: 800;
 }
 .reload:hover {
   color: black;
@@ -36,4 +37,5 @@ main {
   display: grid;
   grid-template-columns: repeat(12, minmax(auto, 60px));
   grid-gap: 40px;
+  margin-left: -115px;
 }

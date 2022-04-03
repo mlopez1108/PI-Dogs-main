@@ -14,6 +14,7 @@ const Navbar = ({ setCurrentPage }) => {
         <div className={NavbarCSS.links} id={showLinks ? "hidden" : ""}>
           <img className={NavbarCSS.icon} src={dogIcon} alt="Img not found" />
           <a href="/dog">Create</a>
+          <img className={NavbarCSS.icon} src={dogIcon} alt="Img not found" />
           <a href="/about">AboutMe</a>
           <img className={NavbarCSS.icon} src={dogIcon} alt="Img not found" />
         </div>

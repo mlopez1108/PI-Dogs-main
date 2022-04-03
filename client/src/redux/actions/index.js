@@ -77,3 +77,9 @@ export function getDetail(id) {
     }
   };
 }
+
+export function getDeleteDetail() {
+  return {
+    type: "GET_DELETE_DETAIL",
+  };
+}

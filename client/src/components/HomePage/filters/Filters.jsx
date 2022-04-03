@@ -30,9 +30,9 @@ const Filters = ({
           className={cx(FiltersCSS.dogs, FiltersCSS.select)}
           onChange={(e) => handleFilterCreated(e)}
         >
-          <option value="all">Todos</option>
-          <option value="created">Creados</option>
-          <option value="api">Existentes</option>
+          <option value="all">All</option>
+          <option value="created">Created</option>
+          <option value="api">Api</option>
         </select>
       </div>
       <div className={FiltersCSS.sort}>
@@ -41,8 +41,8 @@ const Filters = ({
           className={cx(FiltersCSS.sort, FiltersCSS.select)}
           onChange={(e) => handleSort(e)}
         >
-          <option value="asc">Ascendente</option>
-          <option value="desc">Descendente</option>
+          <option value="asc">A - Z</option>
+          <option value="desc">Z - A</option>
         </select>
       </div>
     </div>

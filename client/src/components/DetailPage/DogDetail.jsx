@@ -1,7 +1,7 @@
 import DogDetailCSS from "./styles.module.css";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDetail } from "../../redux/actions";
+import { getDeleteDetail, getDetail } from "../../redux/actions";
 import doggie from "../perro.jpg";
 import { Link, useParams } from "react-router-dom";
 
@@ -11,7 +11,10 @@ const DogDetail = () => {
   const { id } = useParams();
   useEffect(() => {
     dispatch(getDetail(id));
-  }, [dispatch]);
+    return function () {
+      dispatch(getDeleteDetail());
+    };
+  }, [dispatch, id]);
 
   const myDog = useSelector((state) => state.detail);
 
@@ -56,29 +59,3 @@ const DogDetail = () => {
 };
 
 export default DogDetail;
-
-// {myDog.length > 0 ? (
-//   <div>
-//     <h1>Name: {myDog[0].name}</h1>
-//     <img
-//       src={myDog[0].image ? myDog[0].image : doggie}
-//       alt="Img not found"
-//     />
-//     <h2>Height (cm): {myDog[0].height}</h2>
-//     <p>
-//       Temperament:{" "}
-//       {myDog[0].temperament
-//         ? myDog[0].temperament
-//         : myDog[0].temperaments.map((temp) => temp.name + ", ")}
-//     </p>
-//     <p>Weight (kg): {myDog[0].weight}</p>
-//     <p>
-//       Life span: {myDog[0].life_span ? myDog[0].life_span : "Campo vacio"}
-//     </p>
-//   </div>
-// ) : (
-//   <p>Loading...</p>
-// )}
-// <Link to="/home">
-//   <button>Back</button>
-// </Link>

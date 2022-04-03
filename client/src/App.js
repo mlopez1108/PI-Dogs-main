@@ -1,4 +1,3 @@
-// import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
 import HomePage from "./components/HomePage/HomePage";

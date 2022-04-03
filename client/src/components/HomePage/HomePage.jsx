@@ -21,7 +21,7 @@ const HomePage = () => {
   // ------------------------------------------------
   const [orden, setOrden] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const dogsPerPage = 8;
+  const dogsPerPage = 9;
   const indexOfLastDog = currentPage * dogsPerPage;
   const indexOfFirstDog = indexOfLastDog - dogsPerPage;
   const currentDogs = allDogs.slice(indexOfFirstDog, indexOfLastDog);
@@ -78,7 +78,7 @@ const HomePage = () => {
           handleClick(e);
         }}
       >
-        Reload dogs
+        RELOAD DOGS
       </button>
       <Filters
         handleFilterByTemperament={handleFilterByTemperament}
@@ -88,7 +88,7 @@ const HomePage = () => {
       />
 
       <main>
-        <div className={HomeCSS.cards}>
+        <section className={HomeCSS.cards}>
           {currentDogs.map((el) => {
             return (
               <React.Fragment key={el.id}>
@@ -103,7 +103,7 @@ const HomePage = () => {
               </React.Fragment>
             );
           })}
-        </div>
+        </section>
       </main>
       <div className={HomeCSS.pagination}>
         <Pagination
