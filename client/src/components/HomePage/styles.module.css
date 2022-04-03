@@ -4,12 +4,24 @@
   padding: 0px;
 }
 
-.header {
-  margin-left: 35px;
+.home__page .container {
+  justify-content: center;
+  align-items: center;
 }
 
-.body {
-  margin-left: 10px;
+.reload {
+  align-items: center;
+  width: 150px;
+  margin-left: 620px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: 2px solid;
+  color: black;
+  border-radius: 3px;
+}
+.reload:hover {
+  color: black;
+  background-color: #2b2eff;
 }
 
 main {

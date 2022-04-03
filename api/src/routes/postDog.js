@@ -2,7 +2,7 @@ const { Router } = require("express");
 const { Dog, Temperament } = require("../db");
 const router = Router();
 
-router.post("/", async (req, res) => {
+router.post("/dog", async (req, res) => {
   let { name, height, weight, life_span, temperament, createdInDb } = req.body;
 
   let dogCreated = await Dog.create({

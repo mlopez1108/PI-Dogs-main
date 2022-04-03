@@ -1,0 +1,35 @@
+[33mcommit e42b0c827c0197e43782f784426626e2eeddb565[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: mlopez1108 <mathewsito96@hotmail.com>
+Date:   Thu Mar 24 17:44:15 2022 -0300
+
+    Render SearchBar inside Navbar component
+
+[33mcommit 555c59f3894b8d991c58d8ca7a5a11c201febb32[m
+Author: mlopez1108 <mathewsito96@hotmail.com>
+Date:   Thu Mar 24 14:45:50 2022 -0300
+
+    Add component AboutPage
+
+[33mcommit faa822c1c353116460c8fedd656be7390fb0eb5d[m
+Author: mlopez1108 <mathewsito96@hotmail.com>
+Date:   Mon Mar 21 10:57:31 2022 -0300
+
+    Add Navbar component and @mui-material/icons
+
+[33mcommit 6f666363ca1cbea1919d7a1448c39f354d5d5280[m
+Author: mlopez1108 <mathewsito96@hotmail.com>
+Date:   Sat Mar 19 01:36:05 2022 -0300
+
+    Add CSS Modules to all components
+
+[33mcommit 0d9721892a8b13684deb479680a466972bee85f9[m
+Author: mlopez1108 <mathewsito96@hotmail.com>
+Date:   Thu Mar 17 22:33:07 2022 -0300
+
+    Add css styles to LandingPage.jsx
+
+[33mcommit 248b24f51c2f548a4701474efc5f55673c4c8682[m
+Author: mlopez1108 <mathewsito96@hotmail.com>
+Date:   Thu Mar 17 12:28:28 2022 -0300
+
+    Se agrega el proyecto

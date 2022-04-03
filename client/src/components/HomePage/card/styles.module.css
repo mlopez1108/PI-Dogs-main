@@ -1,6 +1,6 @@
 .text__medium {
   font-family: "Open Sants", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 15px;
   font-weight: 400;
   color: #ecf0f1;
@@ -51,9 +51,10 @@
 .card_info {
   display: flex;
   flex-direction: column;
+  margin-top: -5px;
 }
 
-.card_temperaments,
 .card_weight {
+  margin-top: -10px;
   margin-bottom: 5px;
 }

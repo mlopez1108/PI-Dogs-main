@@ -33,7 +33,7 @@ const getAllTemperaments = async () => {
   return allInfo;
 };
 
-router.get("/", async (req, res) => {
+router.get("/temperament", async (req, res) => {
   let temperamentsTotal = await getAllTemperaments();
   try {
     temperamentsTotal.forEach((el) => {
@@ -49,61 +49,5 @@ router.get("/", async (req, res) => {
     res.status(404).send("NO SE QUE PASO ACA", error);
   }
 });
-
-// const temperaments = () => {
-//   let arrayConInfo = [];
-//   const saveTemperaments = apiData.data.map((el) => el.temperament);
-//   // console.log("TEMP:::::  ", saveTemperaments);
-//   for (let i = 0; i < saveTemperaments.length; i++) {
-//     for (let j = 0; j < saveTemperaments[i].length; j++) {
-//       arrayConInfo.push(saveTemperaments[i][j].split(","));
-//     }
-//   }
-//   console.log("SPLIT ::::   ", arrayConInfo);
-//   const stringToArray = splitArray.forEach((el) => {
-//     for (let i = 0; i < el.length; i++) {
-//       arrayConInfo.push(el[i]);
-//     }
-//   });
-//   return arrayConInfo;
-// };
-// const finalArray = temperaments();
-// console.log("QUE LLEGO ACA ? ::::  ", finalArray);
-// // ------------------------------
-// finalArray.forEach((el) => {
-//   Temperament.findOrCreate({
-//     where: { name: el },
-//   });
-// });
-// const allTemperaments = await Temperament.findAll();
-// res.status(200).send(allTemperaments);
-
-// Los TEMPERAMENT vienen en un string:
-// Separo el STRING cada vez que haya una ","
-// SPLIT me devuelve un nuevo arreglo con los elementos
-
-//   const splitTemperaments =  temperaments.map((el) => el.split(","));
-//   console.log("SPLIT  :", splitTemperaments);
-
-//   // Array con todos los temperamentos:
-//   // Estan repetidos:
-//   const arrayTemperaments = () => {
-//     let array = [];
-//     for (let i = 0; i < splitTemperaments.length; i++) {
-//       for (let j = 0; j < splitTemperaments[i].length; j++) {
-//         array.push(splitTemperaments[i][j]);
-//       }
-//     }
-//     return array;
-//   };
-
-//   const findOrCreateTemperament = arrayTemperaments().forEach((el) => {
-//     Temperament.findOrCreate({
-//       where: { name: el },
-//     });
-//   });
-
-//   const allTemperaments = await Temperament.findAll();
-//   res.send(allTemperaments);
 
 module.exports = router;

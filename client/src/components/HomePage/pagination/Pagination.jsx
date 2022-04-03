@@ -1,5 +1,6 @@
 import React from "react";
 import PaginationCSS from "./styles.module.css";
+import { animateScroll as scroll } from "react-scroll";
 
 const Pagination = ({ allDogs, dogsPerPage, paginado }) => {
   const pageNumbers = [];
@@ -15,7 +16,13 @@ const Pagination = ({ allDogs, dogsPerPage, paginado }) => {
         {pageNumbers &&
           pageNumbers.map((number) => (
             <li className={PaginationCSS.number} key={number}>
-              <a onClick={() => paginado(number)} href={`#${number}`}>
+              <a
+                onClick={() => {
+                  paginado(number);
+                  scroll.scrollToTop();
+                }}
+                href={`#${number}`}
+              >
                 {number}
               </a>
             </li>

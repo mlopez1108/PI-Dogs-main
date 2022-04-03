@@ -72,8 +72,8 @@ const HomePage = () => {
   return (
     <div className={HomeCSS.home__page}>
       <Navbar setCurrentPage={setCurrentPage} />
-      <h1>Wololooo!</h1>
       <button
+        className={HomeCSS.reload}
         onClick={(e) => {
           handleClick(e);
         }}
@@ -86,13 +86,6 @@ const HomePage = () => {
         handleSort={handleSort}
         allTemperaments={allTemperaments}
       />
-      <div className={HomeCSS.pagination}>
-        <Pagination
-          allDogs={allDogs.length}
-          dogsPerPage={dogsPerPage}
-          paginado={paginado}
-        />
-      </div>
 
       <main>
         <div className={HomeCSS.cards}>
@@ -112,6 +105,13 @@ const HomePage = () => {
           })}
         </div>
       </main>
+      <div className={HomeCSS.pagination}>
+        <Pagination
+          allDogs={allDogs.length}
+          dogsPerPage={dogsPerPage}
+          paginado={paginado}
+        />
+      </div>
     </div>
   );
 };

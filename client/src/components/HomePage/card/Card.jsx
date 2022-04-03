@@ -1,6 +1,7 @@
 import React from "react";
 import CardCSS from "./styles.module.css";
 import { Link } from "react-router-dom";
+import cx from "classnames";
 
 const Card = ({ id, image, name, temperament, weight }) => {
   return (
@@ -11,12 +12,14 @@ const Card = ({ id, image, name, temperament, weight }) => {
         </Link>
       </div>
       <div className={CardCSS.card_content}>
-        <h3 className={CardCSS.card_title.text__medium}>Name: {name}</h3>
+        <h3 className={cx(CardCSS.card_title, CardCSS.text__medium)}>
+          Name: {name}
+        </h3>
         <div className={CardCSS.card_info}>
-          <h5 className={CardCSS.card_temperaments.text__medium}>
+          <h5 className={cx(CardCSS.card_temperaments, CardCSS.text__medium)}>
             Temperaments: {temperament}
           </h5>
-          <h6 className={CardCSS.card_weight.text__medium}>
+          <h6 className={cx(CardCSS.card_weight, CardCSS.text__medium)}>
             Weight (Kg): {weight}
           </h6>
         </div>
